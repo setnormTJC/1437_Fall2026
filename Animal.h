@@ -9,7 +9,6 @@
 class Lungs
 {
     double volume = 0.0;
-    //char asdfas = '';
 public:
     Lungs() = default; //what does this do? it initializes volume to 0 (if not already set to 0)
     Lungs(double volume); //declaration
@@ -54,7 +53,7 @@ public:
 
 class Dog
 {
-    Lungs lungs;
+    Lungs lungs; //composition (a dog "has (at least one) lung)
     Tail tail;
 };
 

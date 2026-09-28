@@ -2,85 +2,47 @@
 
 #include<filesystem>
 #include<iostream>
+#include<queue>
 
 #include "Animal.h"
+#include "SandwichShop.h"
 
 
-class Car
+
+
+void demoSTDqueue()
 {
-    std::string make = "Ford";
-    int numberOfMiles = 99'999;
+    std::queue<std::string> customers;
+    // std::priority_queue<>
 
-    //int someNumber = INT_MAX + 1; //overflows!
+    customers.push("Alice");
+    customers.push("Bob");
+    customers.push("Carol");
 
-    Car() = default;
-    // Car(/*insert params here*/)
-    // {
-    //
-    // }
+    customers.pop();
 
-    ///@brief based on car's make and mileage, estimates a USD value
-    double calculateCarValue()
-    {
-        double value = 0.0;
-
-        if (make == "Toyota")
-        {
-            value += 3'000;
-        }
-
-        else if (make == "Ford")
-        {
-            value += 500;
-        }
-
-        return value;
-    }
-
-};
-
-
-
-void demoFilesystemStuff()
-{
-    std::filesystem::directory_iterator directoryIterator("."); //parameterized constructor of the
-    //directory_iteratory class (inside the filesystem namespace)
-
-    for (const auto& directoryEntry : directoryIterator)
-    {
-        if (directoryEntry.path().string().find(".txt") != std::string::npos)
-        {
-            //std::cout << directoryEntry.path() << "\n";
-
-            // std::cout << directoryEntry.file_size() << "\n";
-
-            //directoryEntry.
-        }
-
-    }
+    std::cout << "Front customer name: " << customers.front() << "\n";
+    std::cout << "BACK (rear) customer name: " << customers.back() << "\n";
 
 }
 
 
 int main()
 {
-    // Animal animal;
-    // animal.age = 123;
+
+    //Customer customer;
+
+    SandwichShop joesSandwichShop;
+
+    Customer firstCustomer("bob");
+
+    joesSandwichShop.checkoutCustomer(firstCustomer);
+
+    int a = 123;
     //
-    // Human me;
-    // me.
-    // Ingredient ingredient;
-    //
-    // ingredient.printIngredients();
+    // joesSandwichShop.simulateADayInTheLife();
 
-    int chaseAge = 27;
-    std::string chaseSpecies = "Homo sapiens";
-    double chaseLungVolume = 3.0;//liters
-    double chaseThumbWidth = 1.5; //cm
 
-    Human chase(chaseAge, chaseSpecies, chaseLungVolume, chaseThumbWidth);
-
-    // chase.print();
 
 
     return 0;
