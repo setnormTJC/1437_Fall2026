@@ -16,6 +16,7 @@ class Customer
 
 public:
 
+    //
     Customer (const std::string& name);
 
     ///@returns the orderCost
