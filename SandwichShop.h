@@ -12,26 +12,26 @@
 class Customer
 {
     std::string name;
+    double bankAccountBalance = 0.0;
     // double orderCost = 0.0;
 
 public:
+    Customer() = default;
+    Customer (const std::string& name, double balance);
 
-    //
-    Customer (const std::string& name);
-
-    ///@returns the orderCost
-    //double order();
     std::string getName() const;
 
-    Customer() = default;
+    double getBankAccountBalance() const; //getters do not generally modify member variable values
+
+    void subtractMoneyFromBankAccount(double amountToSubtract);
 };
 
 
 class SandwichShop
 {
 //private:
-    std::queue<Customer> lane1;
-    std::queue<Customer> lane2;
+    std::queue<Customer> checkoutLine;
+    // std::queue<Customer> lane2;
 
     std::map<std::string, double> theMenu;
 
@@ -39,6 +39,8 @@ class SandwichShop
 
 public:
     SandwichShop();
+
+    SandwichShop(const std::queue<Customer>& customers);
 
     ///@brief check if either lane is empty?
     void checkoutCustomer(Customer &customer);
