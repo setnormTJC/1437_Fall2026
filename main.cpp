@@ -5,6 +5,7 @@
 #include<queue>
 
 #include "Animal.h"
+#include "Parent.h"
 #include "SandwichShop.h"
 
 
@@ -26,16 +27,13 @@ void demoSTDqueue()
 
 int main()
 {
-    //Customer firstCustomer("bob", 123.45);
+    Parent parent(123.45, "brown");
 
-    //suppose a bunch of people are lined up outside before the sandwich shop opens up
-    std::queue<Customer> customers;
-    customers.push({"Alice", 12.34});
+    Child child;
 
-    //SandwichShop joesSandwichShop;
-    SandwichShop joesSandwichShop(customers);
+    child.withDrawMoney(12.34);
 
-    joesSandwichShop.simulateADayInTheLife();
+    child.liveLife();
 
     return 0;
 }

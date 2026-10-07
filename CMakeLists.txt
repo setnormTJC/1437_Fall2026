@@ -6,4 +6,6 @@ set(CMAKE_CXX_STANDARD 20)
 add_executable(1437_Fall2026 main.cpp
         Animal.cpp
         SandwichShop.cpp
-        SandwichShop.h)
+        SandwichShop.h
+        Parent.cpp
+        Parent.h)
