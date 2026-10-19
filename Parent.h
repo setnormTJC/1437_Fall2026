@@ -6,7 +6,6 @@
 #define INC_1437_FALL2026_PARENT_H
 #include <string>
 
-
 class Parent
 {
 protected: //access modifier/specifier
@@ -26,9 +25,6 @@ public:
 };
 
 
-#endif //INC_1437_FALL2026_PARENT_H
-
-
 class Child : public Parent //private inheritance can also be used (niche)
 {
     //distinguishing attributes of a child?
@@ -40,3 +36,5 @@ public:
     void withDrawMoney(float howMuchMoney);
 
 };
+
+#endif //INC_1437_FALL2026_PARENT_H
