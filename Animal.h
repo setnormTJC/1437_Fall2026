@@ -6,55 +6,31 @@
 #define INC_1437_ANIMAL_H
 #include <string>
 
-class Lungs
-{
-    double volume = 0.0;
-public:
-    Lungs() = default; //what does this do? it initializes volume to 0 (if not already set to 0)
-    Lungs(double volume); //declaration
-};
-
-class Thumbs
-{
-    double width = 0.0;
-
-public:
-    Thumbs() = default;
-    Thumbs(double width);
-};
-
-class Tail
-{
-    bool isBushy = false;
-};
-
 
 class Animal
 {
-public:
+protected:
     int age = 0;
-    std::string speciesName;
-
-    Animal();
-    Animal(int age, const std::string& speciesName);
-
-};
-
-class Human : public Animal //you can read this line as: A human is a type of Animal (humans "inherit from" Animal)
-{
-    Lungs lungs;
-    Thumbs thumbs;
-    // virtual //can be overridden
-
+    //insert other attribs, if desired
 public:
-    Human(int age, const std::string& speciesName, double lungVolume, double thumbWidth);
-    void print() const;
+    Animal();
+    virtual void makeSound() const = 0; //"most" animals make some sound (maybe)
+    //put another way, all animals "should" have the capability to make sound(s)
 };
 
-class Dog
+class Fox : public Animal //you can read this line as: A human is a type of Animal (humans "inherit from" Animal)
 {
-    Lungs lungs; //composition (a dog "has (at least one) lung)
-    Tail tail;
+    //insert distinguishing member variables of foxes, if desired
+public:
+    Fox();
+    void makeSound() const override;
+};
+
+class Wildcat : public Animal
+{
+public:
+    Wildcat();
+    void makeSound() const override;
 };
 
 

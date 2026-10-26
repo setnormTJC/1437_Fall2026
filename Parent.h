@@ -19,7 +19,8 @@ public:
 
     Parent(float money, const std::string& eyeColor = "green");
 
-    /*virtual*/ void liveLife(); //what does VIRTUAL mean here?
+    virtual void liveLife(); //what does VIRTUAL mean here? (it means (BJARNE STROUSTOUP) - >
+    //"can be overridden"
 
     // friend class SomeClass;  //we'll talk about this later
 };
@@ -31,7 +32,7 @@ class Child : public Parent //private inheritance can also be used (niche)
     //private -> enforcer permissions (Linux -drwx---- UGO)
 
 public:
-    void liveLife() /*override*/;
+    void liveLife() override /*override*/;
 
     void withDrawMoney(float howMuchMoney);
 

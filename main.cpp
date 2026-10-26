@@ -2,38 +2,46 @@
 
 #include<filesystem>
 #include<iostream>
+#include<memory>
 #include<queue>
 #include<string>
 
 #include "Animal.h"
 #include "Box.h"
+#include "ChaseExplorations.h"
 #include "demos.h"
 #include "Parent.h"
 #include "SandwichShop.h"
 
-
+void causeARiotAtTheZoo(std::vector<std::unique_ptr<Animal>> pZoo)
+{
+    // for (auto pointerToCurrentAnimal : pZoo)
+    for (int i = 0; i < pZoo.size(); ++i)
+    {
+        pZoo[i]->makeSound();
+        std::system("pause");
+    }
+}
 
 int main()
 {
-    std::cout << "Size of \"big\" class: "  << sizeof(BigClass) << std::endl;
-    std::cout << "Size of \"big\" class POINTER: "  << sizeof(BigClass*) << std::endl;
-    std::cout << "Size of \"big\" class REFERENCE: "  << sizeof(BigClass&) << std::endl;
+    //demoPolymorphism();
+    //Animal a;
 
+    std::vector<std::unique_ptr<Animal>> pZoo;
 
-    std::cout << "Size of a string in bytes: " << sizeof(std::string) << std::endl;
-    demoPointers();
+    std::unique_ptr<Animal> pFox = std::make_unique<Fox>();
+    std::unique_ptr<Animal> pWildcat = std::make_unique<Wildcat>();
 
-    // Parent parent(123.45, "brown");
-    //
-    // Child child;
-    //
-    // child.withDrawMoney(12.34);
-    //
-    // child.liveLife();
-    // Rectangle rectangle(1, 2);
-    //
-    // Box box(rectangle, 3);
+    pZoo.push_back(std::move(pWildcat));
+    pZoo.push_back(std::move(pFox));
 
+    causeARiotAtTheZoo(std::move(pZoo));
+
+    //pWildcat->makeSound();
+    // Wildcat wildcat;
+    //
+    // wildcat.makeSound();
 
 
     return 0;

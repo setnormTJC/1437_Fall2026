@@ -4,34 +4,19 @@
 
 #include "Animal.h"
 
+
 Animal::Animal() = default;
 
-Animal::Animal(int age, const std::string &speciesName)
-    :
-age(age),
-speciesName(speciesName)
+Fox::Fox() = default;
+
+void Fox::makeSound() const
 {
+    std::system("start https://www.youtube.com/watch?v=jofNR_WkoCE");
 }
 
-Human::Human(int age, const std::string &speciesName, double lungVolume, double thumbWidth)
-    :
-Animal(age, speciesName),
-lungs(lungVolume),
-thumbs(thumbWidth)
+Wildcat::Wildcat() = default;
+
+void Wildcat::makeSound() const
 {
-}
-
-
-Lungs::Lungs(double volume)
-    :
-volume(volume)
-{
-
-}
-
-Thumbs::Thumbs(double width)
-    :
-width(width)
-{
-
+    std::system("wildcat-ratatat.m4a");
 }

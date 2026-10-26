@@ -12,4 +12,6 @@ add_executable(1437_Fall2026 main.cpp
         Box.cpp
         Box.h
         demos.cpp
-        demos.h)
+        demos.h
+        ChaseExplorations.cpp
+        ChaseExplorations.h)

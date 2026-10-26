@@ -5,11 +5,12 @@
 #include "demos.h"
 
 #include <iostream>
+#include <memory>
 #include <queue>
+
 #include <string>
 
-
-
+#include "Parent.h"
 
 
 void demoSTDqueue()
@@ -46,6 +47,57 @@ void demoPointers()
     // memoryAddressOfA++; //increment the pointer
     // std::cout << "After incrementing memory address:" << memoryAddressOfA << std::endl;
 
+
+}
+
+
+void demoCStyleArrays()
+{
+    // int* pNums; //...
+    int nums[5] =
+    {
+        256, 2, 3, 4, 5
+    };
+
+    // nums++;
+    std::cout << nums << std::endl; //does this print 1, 2, 3, 4, 5?
+
+
+}
+
+void demoDynamicMemory()
+{
+    std::cout << "How many numbers do you want in your array?" << std::endl;
+    int desiredNumber;
+    std::cin >> desiredNumber;
+
+    // int nums[desiredNumber];
+    int* ptrToArray = new int[desiredNumber];
+    ptrToArray[0] = 257;
+    ptrToArray[1] = 19;
+    ptrToArray[2] = 10;
+
+    //OpenComputerVision
+
+    int dummyBreakpointVar = 123;
+
+}
+
+void demoPolymorphism()
+{
+    std::vector<std::unique_ptr<Parent>> pPeople;
+
+    std::unique_ptr<Parent> pParent = std::make_unique<Parent>(123.45); //prefix p makes it OBVIOUS that we're dealing with pointers
+    //Hungarian notation
+
+    std::unique_ptr<Parent> pChild = std::make_unique<Child>(); //calls default constructor of Child class
+
+    pPeople.push_back(std::move(pParent));
+    pPeople.push_back(std::move(pChild));
+
+    //call all people to live their lives:
+    pPeople[0]->liveLife();  //calls the parent
+    pPeople[1]->liveLife();  //calls the child
 
 }
 

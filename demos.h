@@ -18,6 +18,16 @@ void demoSTDqueue();
 
 void demoPointers();
 
+///@brief note that a C-style is array is STATIC (size cannot change - because it is "stack-allocated"
+///(as opposed to "heap-allocated"
+void demoCStyleArrays();
+
+void demoDynamicMemory();
+
+void demoPolymorphism();
+
+
+
 
 
 

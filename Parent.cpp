@@ -19,7 +19,7 @@ money(money), eyeColor(eyeColor)
 
 void Parent::liveLife()
 {
-    std::cout << "Living life as a parent" << std::endl;
+    std::cout << "Back in my day ... (parent)" << std::endl;
 }
 
 void Child::liveLife()
