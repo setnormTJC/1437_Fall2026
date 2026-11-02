@@ -14,4 +14,8 @@ add_executable(1437_Fall2026 main.cpp
         demos.cpp
         demos.h
         ChaseExplorations.cpp
-        ChaseExplorations.h)
+        ChaseExplorations.h
+        Shape.cpp
+        Shape.h
+        CustomVector.cpp
+        CustomVector.h)
