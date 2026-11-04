@@ -18,4 +18,8 @@ add_executable(1437_Fall2026 main.cpp
         Shape.cpp
         Shape.h
         CustomVector.cpp
-        CustomVector.h)
+        CustomVector.h
+        Person.cpp
+        Person.h
+        Process.cpp
+        Process.h)

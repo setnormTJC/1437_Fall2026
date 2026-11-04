@@ -20,7 +20,7 @@ public:
 
     CustomVector operator+ (const CustomVector& otherVector);
 
-    // bool operator == (const CustomVector& rhs);
+    bool operator == (const CustomVector& rhs);
 };
 
 

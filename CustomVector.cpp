@@ -31,22 +31,22 @@ CustomVector CustomVector::operator+(const CustomVector &otherVector)
     return concatenatedResult;
 }
 
-// bool CustomVector::operator==(const CustomVector &rhs)
-// {
-//
-//     if (this->nums.size() != rhs.nums.size())
-//     {
-//         return false;
-//     }//"best case" scenario: O(1) -> time complexity
-//
-//     for (int i = 0; i < this->nums.size(); ++i) //"average case" -> O(N) linear time complexity
-//     {
-//         if (this->nums[i] != rhs.nums.size())
-//         {
-//             return false;
-//         }
-//     }
-//
-//     return true;
-//
-// }
+bool CustomVector::operator==(const CustomVector &rhs)
+{
+
+    if (this->nums.size() != rhs.nums.size())
+    {
+        return false;
+    }//"best case" scenario: O(1) -> time complexity
+
+    for (int i = 0; i < this->nums.size(); ++i) //"average case" -> O(N) linear time complexity
+    {
+        if (this->nums[i] != rhs.nums.size())
+        {
+            return false;
+        }
+    }
+
+    return true;
+
+}
