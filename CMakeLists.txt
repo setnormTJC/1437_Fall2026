@@ -17,9 +17,10 @@ add_executable(1437_Fall2026 main.cpp
         ChaseExplorations.h
         Shape.cpp
         Shape.h
-        CustomVector.cpp
-        CustomVector.h
         Person.cpp
         Person.h
         Process.cpp
-        Process.h)
+        Process.h
+        CustomVector.h
+        Matrix.cpp
+        Matrix.h)
