@@ -1,48 +1,36 @@
 
-
-#include<filesystem>
+#include<algorithm>
 #include<iostream>
-#include<memory>
 #include<string>
+#include<vector>
 
-#include "Animal.h"
-#include "CustomVector.h"
-#include "demos.h"
-#include "Matrix.h"
-#include "Process.h"
-
-template<typename SomeDataType>
-auto print(SomeDataType thing)
-{
-    std::cout << "Some thing is: " << thing << std::endl;
-}
+#include"MyVector.h"
 
 int main()
 {
+    std::vector<int> nums; //this is just here for "inspiration"
 
-    // print(2);
-    // print("word");
-    //
-    // Process someProcess = {"Process A", 13};
-    //
-    // print(someProcess);
+    size_t initialSize = 3;
+    char initialValueOfAllElements = 'Z';
 
-    std::vector<char> vectorOfChars;
+    try
+    {
+        MyVector myVector(initialSize, initialValueOfAllElements); //allocates space for 5 chars and sets all 5 bytes to 00 (the "NULL" character)
 
-    std::string someString;
+        myVector.modifyIndex(0, 'a');
+        myVector.modifyIndex(1, 'b');
+        myVector.modifyIndex(2, 'c');
 
-    CustomVector<std::string> customVector;
+        myVector.reallocate(); //doubles the capacity (with current implementation)
 
-    customVector.getDataTypeOfElements();
+        myVector.modifyIndex(3, 'd');
 
-    Matrix firstMatrix(1, 2, 3, 4);
-    Matrix secondMatrix(5, 6, 7, 8);
+    }
 
-    //{1, 2}  + {5, 6}    = {6, 8}
-    //{3, 4}    {7, 8}    = {10, 12}
-    Matrix sum = firstMatrix + secondMatrix;
-
-
+    catch (const std::exception& e)
+    {
+        std::cout << e.what() << std::endl;
+    }
 
     return 0;
 }

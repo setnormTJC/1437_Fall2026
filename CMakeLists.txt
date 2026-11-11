@@ -23,4 +23,6 @@ add_executable(1437_Fall2026 main.cpp
         Process.h
         CustomVector.h
         Matrix.cpp
-        Matrix.h)
+        Matrix.h
+        MyVector.cpp
+        MyVector.h)
