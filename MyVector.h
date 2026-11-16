@@ -24,6 +24,15 @@ public:
     //alternative function "name": overload the subscript operator ...
     void modifyIndex(size_t index, char newData);
 
+    size_t sequentialSearch(char target);
+
+    void swap(size_t lhsIndex, size_t rhsIndex);
+
+    //binarySearch();
+
+    ///@brief modifies pData, does NOT return a new, sorted array
+    void ascendingNaiveSort();
+
     //pushBack()
     //pushFront() //is this a good idea?
 

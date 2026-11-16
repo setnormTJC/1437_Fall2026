@@ -50,6 +50,7 @@ void MyVector::modifyIndex(size_t index, char newData)
     //safety first:
     if (index < 0 || index > mCapacity)
     {
+        //if index > mCapacity, "should" we reallocate??
         throw std::runtime_error("Went out of bounds"); //make MyException class later
         //note the lack of return;
     }
@@ -60,5 +61,45 @@ void MyVector::modifyIndex(size_t index, char newData)
     }
 
     pData[index] = newData;
+}
+
+size_t MyVector::sequentialSearch(char target)
+{
+    for (size_t i = 0; i < mSize; ++i)
+    {
+        if (pData[i] == target)
+        {
+            return i;
+        }
+    }
+
+    //"worst case" input:
+    return -1;
+
+}
+
+void MyVector::swap(size_t lhsIndex, size_t rhsIndex)
+{
+    //insert safety checks! (bounds checks)
+
+    char temporaryCopy = pData[lhsIndex];
+    pData[lhsIndex] = pData[rhsIndex];
+
+    pData[rhsIndex] = temporaryCopy;
+}
+
+void MyVector::ascendingNaiveSort()
+{
+    for (size_t leftPos = 0; leftPos < mSize - 1; ++leftPos)
+    {
+        for (size_t rightPos = leftPos + 1; rightPos < mSize; ++rightPos)
+        {
+            if (pData[leftPos] > pData[rightPos])
+            {
+                swap(leftPos, rightPos);
+            }
+
+        }
+    }
 }
 
