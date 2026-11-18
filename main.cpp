@@ -8,38 +8,30 @@
 
 int main()
 {
-    std::vector<int> nums; //this is just here for "inspiration"
+    //std::vector<int> nums; //this is just here for "inspiration"
 
-    size_t initialSize = 5;
-    char initialValueOfAllElements = 'Z';
 
     try
     {
+        size_t N = 100; //N is the size of the "problem" (or dataset)
+        int initialValueOfElements = 0;
+        MyVector<int> nums(N, initialValueOfElements);
 
-        MyVector myVector(initialSize, initialValueOfAllElements); //allocates space for 5 chars and sets all 5 bytes to 00 (the "NULL" character)
-
-        myVector.modifyIndex(0, 'c');
-        myVector.modifyIndex(1, 'a');
-        myVector.modifyIndex(2, 'b');
-        myVector.modifyIndex(3, 'd');
-        myVector.modifyIndex(4, 'e');
-
-        char charToSearchToFor = 'i';
-
-        int locationOfTarget = myVector.sequentialSearch(charToSearchToFor);
-        if (locationOfTarget != - 1)
+        for (int i = 0; i < N; ++i)
         {
-            std::cout << "Found " << charToSearchToFor << " at index = " << locationOfTarget << std::endl;
+            nums.modifyIndex(i, rand() % 100);
         }
 
-        else
-        {
-            std::cout << "Not found :(" << std::endl;
-        }
+        std::cout << "Before sorting: " << std::endl;
+        std::string separator = " ";
+        nums.print(separator);
 
-        myVector.ascendingNaiveSort();
+        nums.ascendingNaiveSort();
 
-        int dummyBreakPoint;
+        std::cout << "AFTER sorting: " << std::endl;
+        nums.print(separator);
+
+
 
     }
 
